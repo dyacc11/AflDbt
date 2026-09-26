@@ -3092,7 +3092,7 @@ pip install pytest pandas
 cd ~/MyProjects
 
 # Clone the project repository from GitHub
-git clone https://github.com/<your_user>/AflDbt.git
+git clone https://github.com/dyacc11/AflDbt.git
 
 # Navigate to the project directory
 cd AflDbt
