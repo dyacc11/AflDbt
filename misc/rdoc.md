@@ -2481,7 +2481,7 @@ books_library/
 ```
 
 Если у вас установлен VS Code и расширение dbt Power User, вы можете увидеть ту же диаграмму зависимостей моделей на вкладке Lineage, что и на диаграмме выше:
-<img src="img/lineage_dbt.png" alt="dbt lineage" style="border: 2px solid #333333; padding: 5px;">
+<img src="../docs/img/lineage_dbt.png" alt="dbt lineage" style="border: 2px solid #333333; padding: 5px;">
 
 Для тестирования моделей выполните `dbt run` и убедитесь, что все модели успешно выполнены, на основе отображаемых сообщений:
 
@@ -2515,13 +2515,13 @@ hh:mm:ss  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
 Например, подойдёт [DB Browser for SQLite](https://github.com/sqlitebrowser/sqlitebrowser).
 
 Мы можем посмотреть на схему базы данных, чтобы убедиться, что она содержит две таблицы: `adult_books` и `child_books`, и два представления: `books` и `recent_child_books`:
-<img src="img/dbt_base_schema.png" alt="DB Schema" style="border: 2px solid #333333; padding: 5px;">
+<img src="../docs/img/dbt_base_schema.png" alt="DB Schema" style="border: 2px solid #333333; padding: 5px;">
 
 В представлении `books` содержится 17 строк:
-<img src="img/dbt_books_data.png" alt="Books" style="border: 2px solid #333333; padding: 5px;">
+<img src="../docs/img/dbt_books_data.png" alt="Books" style="border: 2px solid #333333; padding: 5px;">
 
 Финальное представление `recent_child_books` возвращает две строки:
-<img src="img/dbt_recent_child_books.png" alt="recent_child_books" style="border: 2px solid #333333; padding: 5px;">
+<img src="../docs/img/dbt_recent_child_books.png" alt="recent_child_books" style="border: 2px solid #333333; padding: 5px;">
 
 Промежуточные таблицы `adult_books` и `child_books` содержат 7 и 8 строк соответственно.
 
@@ -3474,23 +3474,23 @@ airflow webserver
 По окончании инициализации веб-интерфейс Airflow будет доступен по адресу `http://localhost:8080`. 
 После входа отображается список зарегистрированных DAG:
 
-<img src="img/afl_01_dags_list.png" alt="DAGs list" style="border: 2px solid #333333; padding: 5px;">
+<img src="../docs/img/afl_01_dags_list.png" alt="DAGs list" style="border: 2px solid #333333; padding: 5px;">
 Как можно видеть, в списке только один DAG `dbt_books_library`, он активен, выполнялся два раза, и оба раза успешно.
 
 Если открыть этот DAG, то можно увидеть и историю выполнения, и детали:
 
-<img src="img/afl_02_dag_details.png" alt="DAG details" style="border: 2px solid #333333; padding: 5px;">
+<img src="../docs/img/afl_02_dag_details.png" alt="DAG details" style="border: 2px solid #333333; padding: 5px;">
 
 Как видно, было выполнено два успешных запуска. В правом верхнем углу показан статус расписания запусков: `Schedule: None` и `Next Run ID: None`. После второй записи расположен значок запуска DAG. Так как DAG предназначен для ручного запуска, то и расписание, и следующий запуск отсутствуют.
 
 Если перейти на вкладку `Graph`, то можно увидеть сам граф для DAG:
 
-<img src="img/afl_03_dag_graph.png" alt="DAG graph" style="border: 2px solid #333333; padding: 5px;">
+<img src="../docs/img/afl_03_dag_graph.png" alt="DAG graph" style="border: 2px solid #333333; padding: 5px;">
 
 Граф отражает логику работы библиотеки: он строит последовательность задач dbt, две из которых объединены в группу.
 Для запуска DAG необходимо нажать значок запуска в правом верхнем углу. После этого на вкладке `Graph` можно наблюдать последовательный запуск задач:
 
-<img src="img/afl_04_dag_running.png" alt="DAG run" style="border: 2px solid #333333; padding: 5px;">
+<img src="../docs/img/afl_04_dag_running.png" alt="DAG run" style="border: 2px solid #333333; padding: 5px;">
 
 Так как в локальной установке по умолчанию используется `SequentialExecutor`, задачи будут выполняться по одной за раз. В конечном итоге выполнение должно успешно завершиться, и теперь в истории будет три успешных запуска. 
  
