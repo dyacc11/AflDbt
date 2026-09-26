@@ -1,4 +1,4 @@
-![Logo Big](img/Logo_big.png)
+![Logo Big](docs/img/Logo_big.png)
 
 # AflDbt
 
