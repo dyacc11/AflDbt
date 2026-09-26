@@ -1,0 +1,87 @@
+{
+    "metadata": {
+		"project_name": "dbt_advanced_test"
+	},
+	"nodes": {
+		"model.dbt_advanced_test.s_task": {
+			"name": "s_task"
+		},
+		"model.dbt_advanced_test.b_task": {
+			"name": "b_task"
+		},
+		"model.dbt_advanced_test.c_task1": {
+			"name": "c_task1"
+		},
+		"model.dbt_advanced_test.c_task2": {
+			"name": "c_task2"
+		},
+		"model.dbt_advanced_test.e_task": {
+			"name": "e_task"
+		},
+		"test.dbt_advanced_test.c_task1_test1": {
+			"name": "c_task1_test1"
+		},
+		"test.dbt_advanced_test.c_task1_test2": {
+			"name": "c_task1_test2"
+		},
+		"test.dbt_advanced_test.s_task_test": {
+			"name": "s_task_test"
+		},
+		"test.dbt_advanced_test.e_task_test": {
+			"name": "e_task_test"
+		}
+	},
+	"parent_map": {
+		"model.dbt_advanced_test.s_task": [],
+		"model.dbt_advanced_test.b_task": [
+			"model.dbt_advanced_test.s_task"
+		],
+		"model.dbt_advanced_test.c_task1": [
+			"model.dbt_advanced_test.s_task"
+		],
+		"model.dbt_advanced_test.c_task2": [
+			"model.dbt_advanced_test.c_task1"
+		],
+		"model.dbt_advanced_test.e_task": [
+			"model.dbt_advanced_test.b_task",
+			"model.dbt_advanced_test.c_task2"
+		],
+		"test.dbt_advanced_test.c_task1_test1": [
+			"model.dbt_advanced_test.c_task1"
+		],
+		"test.dbt_advanced_test.c_task1_test2": [
+			"model.dbt_advanced_test.c_task1"
+		],
+		"test.dbt_advanced_test.s_task_test": [
+			"model.dbt_advanced_test.s_task"
+		],
+		"test.dbt_advanced_test.e_task_test": [
+			"model.dbt_advanced_test.e_task"
+		]
+	},
+	"child_map": {
+        "model.dbt_advanced_test.s_task": [
+			"model.dbt_advanced_test.b_task",
+			"model.dbt_advanced_test.c_task1",
+			"test.dbt_advanced_test.s_task_test"
+		],
+		"model.dbt_advanced_test.b_task": [
+			"model.dbt_advanced_test.e_task"
+		],
+		"model.dbt_advanced_test.c_task1": [
+			"model.dbt_advanced_test.c_task2",
+			"test.dbt_advanced_test.c_task1_test1",
+			"test.dbt_advanced_test.c_task1_test2"
+		],
+		"model.dbt_advanced_test.c_task2": [
+			"model.dbt_advanced_test.e_task"
+		],
+		"model.dbt_advanced_test.e_task": [
+		    "test.dbt_advanced_test.e_task_test"
+		],
+		"test.dbt_advanced_test.c_task1_test1": [],
+		"test.dbt_advanced_test.c_task1_test2": [],
+		"test.dbt_advanced_test.s_task_test": [],
+		"test.dbt_advanced_test.e_task_test": []
+	}
+}

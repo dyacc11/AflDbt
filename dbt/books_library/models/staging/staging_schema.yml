@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: child_books
+    description: "Books targeted at children"
+    columns:
+      - name: book_id
+        tests:
+          - not_null
+      - name: title
+
+
+  - name: adult_books
+    description: "Books targeted at adults"
+    columns:
+      - name: book_id
+        tests:
+          - not_null
+      - name: title

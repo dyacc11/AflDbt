@@ -1,0 +1,54 @@
+{
+    "metadata": {
+		"project_name": "dbt_simple_test"
+	},
+	"nodes": {
+		"model.dbt_simple_test.s_task": {
+			"name": "s_task"
+		},
+		"model.dbt_simple_test.b_task": {
+			"name": "b_task"
+		},
+		"model.dbt_simple_test.c_task1": {
+			"name": "c_task1"
+		},
+		"model.dbt_simple_test.c_task2": {
+			"name": "c_task2"
+		},
+		"model.dbt_simple_test.e_task": {
+			"name": "e_task"
+		}
+	},
+	"parent_map": {
+		"model.dbt_simple_test.s_task": [],
+		"model.dbt_simple_test.b_task": [
+			"model.dbt_simple_test.s_task"
+		],
+		"model.dbt_simple_test.c_task1": [
+			"model.dbt_simple_test.s_task"
+		],
+		"model.dbt_simple_test.c_task2": [
+			"model.dbt_simple_test.c_task1"
+		],
+		"model.dbt_simple_test.e_task": [
+			"model.dbt_simple_test.b_task",
+			"model.dbt_simple_test.c_task2"
+		]
+	},
+	"child_map": {
+        "model.dbt_simple_test.s_task": [
+			"model.dbt_simple_test.b_task",
+			"model.dbt_simple_test.c_task1"
+		],
+		"model.dbt_simple_test.b_task": [
+			"model.dbt_simple_test.e_task"
+		],
+		"model.dbt_simple_test.c_task1": [
+			"model.dbt_simple_test.c_task2"
+		],
+		"model.dbt_simple_test.c_task2": [
+			"model.dbt_simple_test.e_task"
+		],
+		"model.dbt_simple_test.e_task": []
+	}
+}
