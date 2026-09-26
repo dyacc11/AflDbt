@@ -1,0 +1,11 @@
+books_library:
+  target: dev
+  outputs:
+    dev:
+      type: sqlite
+      threads: 1
+      database: 'books_library'
+      schema: 'main'
+      schema_directory: '.'
+      schemas_and_paths:
+        main: '{{ env_var("AFLDBT_DBT_DB", "") }}books_library.db'

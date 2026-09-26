@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: recent_child_books
+    description: "Node D - Recent children's books (published since 2000) with era classification"
+    columns:
+      - name: book_id
+        tests:
+          - not_null
+      - name: published_year
+      - name: era
+        description: "Classification: 'Very Recent' (2020+), 'Recent' (2000-2019)"

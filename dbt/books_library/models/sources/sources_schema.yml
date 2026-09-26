@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: books
+    description: "Raw books collection (sample data via SELECT) - THE ONLY SOURCE"
+    columns:
+      - name: book_id
+        description: "Unique identifier for the book"
+        tests:
+          - not_null
+          - unique
+      - name: title
+        description: "Book title"
+      - name: author
+        description: "Book author"
+      - name: target_audience
+        description: "Target audience: 'children' or 'adult'"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['children', 'adult']
+      - name: published_year
+        description: "Year the book was published"
